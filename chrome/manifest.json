@@ -1,0 +1,18 @@
+{
+    "name": "treeit",
+    "description": "view and remark the page",
+    "version": "1.0",
+    "permissions": [
+        "activeTab"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_title": "treeit"
+    },
+    "manifest_version": 2
+}

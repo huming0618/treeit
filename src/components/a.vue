@@ -1,5 +1,5 @@
 <template id="template-home">
-  <div>It is a webpack demo</div>
+  <div>Started</div>
 </template>
 
 <script>
