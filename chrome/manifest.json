@@ -14,5 +14,12 @@
     "browser_action": {
         "default_title": "treeit"
     },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "css": ["treeit.css"],
+          "js": ["treeit.page.js"]
+        }
+      ],
     "manifest_version": 2
 }

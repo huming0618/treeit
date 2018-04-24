@@ -73,6 +73,8 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             { from: './src/background.js', to: 'background.js' },
+            { from: './src/style/treeit.css', to: 'treeit.css' },
+            { from: './src/page.js', to: 'treeit.page.js' },
             { from: './chrome/manifest.json', to: 'manifest.json' }
         ]),
         new ExtractTextPlugin('[name].css')
