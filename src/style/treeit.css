@@ -2,9 +2,9 @@ body {
     
 }
 
-div.teeit__treeview {
+div.treeit__treeview {
     z-index: 9999;
-    background: blue;
+    background: #fcfffc;
     position: fixed;
     top: 0;
     left: 0;

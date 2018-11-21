@@ -12,7 +12,7 @@ var BUILD_PATH = path.join(ROOT_PATH, '/dist');
 
 
 module.exports = {
-    entry: path.join(__dirname, './src/index/index.js'),
+    entry: path.join(__dirname, './src/index.js'),
     output: {
         path: path.join(__dirname, './dist'),
         filename: 'index.js'
@@ -66,15 +66,14 @@ module.exports = {
                 NODE_ENV: JSON.stringify('development') 
             }
         }),
-        new HtmlWebpackPlugin({ 
-            filename: './index.html',
-            template: './src/index/index.html',
-            hash: false,
-        }),
+        // new HtmlWebpackPlugin({ 
+        //     filename: './index.html',
+        //     template: './src/index/index.html',
+        //     hash: false,
+        // }),
         new CopyWebpackPlugin([
             { from: './src/background.js', to: 'background.js' },
             { from: './src/style/treeit.css', to: 'treeit.css' },
-            { from: './src/page.js', to: 'treeit.page.js' },
             { from: './chrome/manifest.json', to: 'manifest.json' }
         ]),
         new ExtractTextPlugin('[name].css')

@@ -3,7 +3,8 @@
     "description": "view and remark the page",
     "version": "1.0",
     "permissions": [
-        "activeTab"
+        "activeTab", 
+        "contextMenus"
     ],
     "background": {
         "scripts": [
@@ -18,7 +19,7 @@
         {
           "matches": ["<all_urls>"],
           "css": ["treeit.css"],
-          "js": ["treeit.page.js"]
+          "js": ["index.js"]
         }
       ],
     "manifest_version": 2
