@@ -1,8 +1,5 @@
 <style>
-body {
-    color: red;
-    backgruond:#ccc;
-}
+
 </style>
 
 <template id="template-home">
