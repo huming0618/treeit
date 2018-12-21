@@ -1,12 +1,12 @@
 <style>
 body {
-    color: red;
-    backgruond:#ccc;
+    /* color: red;
+    backgruond:#ccc; */
 }
 </style>
 
 <template id="template-home">
-  <div class="treeit__treeview" v-show="isShow">Started</div>
+  <div class="treeit__treeview" v-show="isShow">Treeit</div>
 </template>
 
 <script>

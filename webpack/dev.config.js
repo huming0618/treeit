@@ -1,24 +1,27 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+// var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ZipPlugin = require('zip-webpack-plugin')
 
-var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.join(ROOT_PATH, 'src/index'); 
+var ROOT_PATH = path.resolve(__dirname, '../');
+var APP_PATH = path.join(ROOT_PATH, 'src'); 
 var APP_FILE = path.join(APP_PATH, 'index.js'); 
 var BUILD_PATH = path.join(ROOT_PATH, '/dist'); 
 
 
 module.exports = {
-    entry: path.join(__dirname, './src/index.js'),
+    mode: 'development',
+    devtool: 'eval-source-map',
+    entry: APP_FILE,
     output: {
-        path: path.join(__dirname, './dist'),
+        path: BUILD_PATH,
         filename: 'index.js'
     },
     devServer: {
-        contentBase: "./dist", 
+        index: "test.html",
+        contentBase: BUILD_PATH, 
         historyApiFallback: true, 
         inline: true 
     },
@@ -32,15 +35,7 @@ module.exports = {
                 test: /\.json$/,
                 exclude: /^node_modules$/,
                 use: "json"
-            }, {
-                test: /\.css$/,
-                exclude: /^node_modules$/,
-                use: ExtractTextPlugin.extract('style', ['css', 'autoprefixer'])
-            }, {
-                test: /\.scss$/,
-                exclude: /^node_modules$/,
-                use: ExtractTextPlugin.extract('style', ['css', 'autoprefixer', 'sass'])
-            }, {
+            },{
                 test: /\.(png|jpg)$/,
                 exclude: /^node_modules$/,
                 use: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'
@@ -72,10 +67,11 @@ module.exports = {
         //     hash: false,
         // }),
         new CopyWebpackPlugin([
-            { from: './src/background.js', to: 'background.js' },
-            { from: './src/style/treeit.css', to: 'treeit.css' },
-            { from: './chrome/manifest.json', to: 'manifest.json' }
+            { from: path.join(APP_PATH, 'test.html'), to: 'test.html' },
+            { from: path.join(APP_PATH, 'background.js'), to: 'background.js' },
+            { from: path.join(APP_PATH, 'style/treeit.css'), to: 'treeit.css' },
+            { from: path.join(APP_PATH, 'chrome/manifest.json'), to: 'manifest.json' }
         ]),
-        new ExtractTextPlugin('[name].css')
+        // new ExtractTextPlugin('[name].css')
     ]
 }

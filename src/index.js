@@ -1,22 +1,37 @@
 import Vue from 'vue'
 import main from './components/main.vue'
+// import rangy from 'rangy'
+import rangy from 'rangy/lib/rangy-serializer'
 
 
-var mainComponent = Vue.extend(main)
-var mainDiv = new mainComponent({
-    propsData: { type: 'primary' }
-})
+console.log('===== Test =====')
 
-mainDiv.$mount();
 
-document.body.appendChild(mainDiv.$el)
+window.onload = ()=>{
+    var mainComponent = Vue.extend(main)
+    var mainDiv = new mainComponent({
+        propsData: { type: 'primary' }
+    })
 
-console.log('test.page', mainDiv);
+    mainDiv.$mount();
 
-document.addEventListener("selectionchange", function() {
-    console.log('Selection changed.'); 
-    mainDiv.show();
-});
+    document.body.appendChild(mainDiv.$el)
+
+    rangy.init()
+    rangy.restoreSelectionFromCookie()
+    console.log('rangy', rangy)
+    document.addEventListener("selectionchange", function() {
+        const sel = rangy.getSelection()
+        const html = sel.toHtml()
+     
+        console.log('Selection.', sel)
+        const selData = rangy.serializeSelection(rangy.getSelection())
+        rangy.saveSelectionCookie()
+        console.log('Selection changed.', html, selData)
+        //mainDiv.show()
+    })
+}
+
 
 // var divHTML = [
 //     '<div class=-"teeit__treeview">',
