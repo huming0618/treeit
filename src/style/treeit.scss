@@ -1,0 +1,106 @@
+body {
+    
+}
+
+ul{	margin:0;	padding:0; list-style-type:none; }
+
+div.treeit__treeview {
+    z-index: 9999;
+    background: #fcfffc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+}
+
+div.treeit__menu {
+    
+    height: 100px;
+    width: 100px;
+    position:fixed;
+    left:50px;
+    top:50px;
+
+    /* SCSS Vars */
+    $primaryC:	#0f5953;
+    $primaryCd:	#0f5953;
+    $primaryL:	#ffffff;
+    $standard:	#3bba76;
+
+    $smallWidth: 48px;
+
+    /* The Circle menu */
+    .circleMenu{
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%, -50%);
+    }
+
+    .mainBtn{
+        display:block;
+        width:$smallWidth;
+        height:$smallWidth;
+        position:relative;
+        z-index:20;
+        background-color:$standard;
+        transition:transform .3s ease;
+        border-radius: 100%;
+        
+        &:before,
+        &:after{
+            content:'';
+            display:block;
+            width:2px;
+            height:30px;
+            background-color:$primaryL;
+            position:absolute;
+            left:23px;
+            top:9px; }
+        
+        &:after{
+            width:30px;
+            height:2px;
+            left:9px;
+            top:23px;	}
+    }
+
+    .circleMenu:hover .mainBtn{
+        cursor:pointer;
+        transform:rotate(45deg); 
+    }
+
+    .circleMenu .inner{
+        display:block;
+        width:$smallWidth;
+        height:$smallWidth;
+        background-color:$primaryCd;
+        padding:0px;
+        transition:width .3s ease, height .3s ease;
+        border-radius: 100%;
+        @extend .circleMenu;
+    }
+
+    .circleMenu:hover .inner{
+        width:150px;
+        height:150px;
+    }
+
+    .circleMenu .inner > li{
+        @extend .circleMenu;
+        z-index:10;
+
+        cursor: pointer;
+        transition:left .3s ease, top .3s ease;
+        > i{
+            color: $standard !important;
+        }
+    }
+
+    .circleMenu:hover .inner > li:nth-child(1){ left:20%; }
+    .circleMenu:hover .inner > li:nth-child(2){ top:20%; }
+    .circleMenu:hover .inner > li:nth-child(3){ left:80%; }
+    .circleMenu:hover .inner > li:nth-child(4){ top:80%; }
+
+}

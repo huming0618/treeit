@@ -6,16 +6,24 @@ body {
 </style>
 
 <template id="template-home">
-  <div class="treeit__treeview" v-show="isShow">Treeit</div>
+  <div class="treeit__treeview" v-show="isShow">
+      <Menu />
+  </div>
 </template>
 
 <script>
+
+import Menu from './menu.vue'
+
 export default {
     name: 'Main',
     data: ()=>{
         return {
-            isShow: false
+            isShow: true
         }
+    },
+    components: {
+        Menu
     },
     props: {
 

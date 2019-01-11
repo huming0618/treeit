@@ -1,5 +1,6 @@
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import './style/treeit.scss'
 
 import Vue from 'vue'
 import main from './components/main.vue'
@@ -7,7 +8,7 @@ import main from './components/main.vue'
 // import rangy from 'rangy'
 import rangy from 'rangy/lib/rangy-serializer'
 
-Vue.use(ElementUI);
+Vue.use(ElementUI)
 
 console.log('===== Test =====')
 

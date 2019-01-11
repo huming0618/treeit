@@ -28,6 +28,21 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.scss$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    "css-loader", // translates CSS into CommonJS
+                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    { loader: "style-loader" },
+                    { loader: "css-loader" }
+                ]
+            },
+            {
                 test: /\.vue$/,
                 exclude: /^node_modules$/,
                 use: 'vue-loader'
@@ -69,7 +84,6 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: path.join(APP_PATH, 'test.html'), to: 'test.html' },
             { from: path.join(APP_PATH, 'background.js'), to: 'background.js' },
-            { from: path.join(APP_PATH, 'style/treeit.css'), to: 'treeit.css' },
             { from: path.join(APP_PATH, 'chrome/manifest.json'), to: 'manifest.json' }
         ]),
         // new ExtractTextPlugin('[name].css')
