@@ -9,10 +9,10 @@
                 <ul class="outer">
                     <li><span class="mainBtn"></span>
                         <ul class="inner">
-                        <li><i class="el-icon-share"></i></li>
-                        <li><i class="el-icon-share"></i></li>
-                        <li><i class="el-icon-share"></i></li>
-                        <li><i class="el-icon-share"></i></li>
+                            <li><i class="el-icon-share" v-on:mousedown="click"></i></li>
+                            <li><i class="el-icon-share"></i></li>
+                            <li><i class="el-icon-share"></i></li>
+                            <li><i class="el-icon-share"></i></li>
                         </ul>
                     </li>
                 </ul>
@@ -33,6 +33,11 @@ export default {
 
     },
     methods: {
+        click(event){
+            console.log('click.event', event)
+            event.preventDefault()
+            return false
+        },
         show: function(){
             console.log('show');
             this.isShow = true;

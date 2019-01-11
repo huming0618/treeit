@@ -6,9 +6,11 @@ body {
 </style>
 
 <template id="template-home">
-  <div class="treeit__treeview" v-show="isShow">
-      <Menu />
-  </div>
+    <div class="ttreeit">
+        <div class="treeit__treeview" v-show="isShow">
+        </div>
+        <Menu />
+    </div>
 </template>
 
 <script>
@@ -19,7 +21,7 @@ export default {
     name: 'Main',
     data: ()=>{
         return {
-            isShow: true
+            isShow: false
         }
     },
     components: {
