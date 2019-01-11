@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./index.js"/></script>
+</head>
+<body>
+    <div id="wiki-body" class="mt-4 flex-auto min-width-0 gollum-markdown-content instapaper_body">
+        <div class="markdown-body">
+          <h1>
+<a id="user-content-rangy" class="anchor" href="#rangy" aria-hidden="true"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rangy</h1>
+<h2>
+<a id="user-content-core" class="anchor" href="#core" aria-hidden="true"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Core</h2>
+<p>The following are the core Rangy objects (try a live demo <a href="https://lezuse.github.io/rangy/demos/core.html" rel="nofollow">here</a>):</p>
+<ul>
+<li>
+<a class="internal present" href="/timdown/rangy/wiki/Rangy-Object">The main Rangy object</a>, which acts as a namespace for Rangy functionality;</li>
+<li>
+<a class="internal present" href="/timdown/rangy/wiki/Rangy-Range">Range</a>, representing a portion of an HTML document and based on the DOM Level 2 Range interface;</li>
+<li>
+<a class="internal present" href="/timdown/rangy/wiki/Rangy-Selection">Selection</a>, representing the user's selection within an HTML document.</li>
+<li>
+<a class="internal present" href="/timdown/rangy/wiki/Dom-Utils">DOM Utils</a>, a collection of DOM-related helper functions used internally by Rangy but also available via <code>rangy.dom</code>.</li>
+</ul>
+<h2>
+<a id="user-content-modules" class="anchor" href="#modules" aria-hidden="true"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Modules</h2>
+<p>Rangy also comes with optional modules, each of which comes in a separate .js file. Current modules are:</p>
+<ul>
+<li><a class="internal present" href="/timdown/rangy/wiki/Selection-Save-Restore-Module">Selection save and restore</a></li>
+<li><a class="internal present" href="/timdown/rangy/wiki/Class-Applier-Module">Class apply and remove to/from selection</a></li>
+<li><a class="internal present" href="/timdown/rangy/wiki/Serializer-Module">Selection and Range serialization</a></li>
+<li><a class="internal present" href="/timdown/rangy/wiki/Text-Range-Module">Text-based extensions to selection and range</a></li>
+<li><a class="internal present" href="/timdown/rangy/wiki/Highlighter-Module">Highlighter module providing an API for creating, serializing and deserializing text highlights</a></li>
+</ul>
+<h2>
+<a id="user-content-other-documentation" class="anchor" href="#other-documentation" aria-hidden="true"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other documentation</h2>
+<p>Other pages within the documentation are at various stages of completion and will be linked from this page when completed.</p>
+
+        </div>
+
+        <div id="wiki-footer" class="mt-5 mb-0 wiki-footer gollum-markdown-content">
+          <div class="Box Box--condensed bg-gray box-shadow">
+            <div class="Box-body wiki-writable markdown-body">
+                <a href="/timdown/rangy/wiki/_Footer/_edit" class="position-relative float-right muted-link" title="Edit footer" style="right: -5px; z-index: 2">
+                  <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"></path></svg>
+                </a>
+              <p>ZxXzZ plz fix</p>
+
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
