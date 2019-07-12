@@ -26,44 +26,7 @@ module.exports = {
         inline: true 
     },
     module: {
-        rules: [
-            {
-                test: /\.scss$/,
-                use: [
-                    "style-loader", // creates style nodes from JS strings
-                    "css-loader", // translates CSS into CommonJS
-                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
-                ]
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    { loader: "style-loader" },
-                    { loader: "css-loader" }
-                ]
-            },
-            {
-                test: /\.vue$/,
-                exclude: /^node_modules$/,
-                use: 'vue-loader'
-            }, {
-                test: /\.json$/,
-                exclude: /^node_modules$/,
-                use: "json"
-            },{
-                test: /\.(png|jpg)$/,
-                exclude: /^node_modules$/,
-                use: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'
-            }, {
-                test: /\.(eot|woff|svg|ttf|woff2|gif|appcache)(\?|$)/,
-                exclude: /^node_modules$/,
-                use: 'file-loader?name=[name].[ext]'
-            }, {
-                test: /\.js$/,
-                exclude: /^node_modules$/,
-                use: 'babel-loader'
-            }
-        ]
+        rules: require('./rules')
     },
     resolve: {
         alias: {
@@ -76,16 +39,9 @@ module.exports = {
                 NODE_ENV: JSON.stringify('development') 
             }
         }),
-        // new HtmlWebpackPlugin({ 
-        //     filename: './index.html',
-        //     template: './src/index/index.html',
-        //     hash: false,
-        // }),
         new CopyWebpackPlugin([
             { from: path.join(APP_PATH, 'test.html'), to: 'test.html' },
-            { from: path.join(APP_PATH, 'background.js'), to: 'background.js' },
             { from: path.join(APP_PATH, 'chrome/manifest.json'), to: 'manifest.json' }
-        ]),
-        // new ExtractTextPlugin('[name].css')
+        ])
     ]
 }

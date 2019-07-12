@@ -1,1 +1,2 @@
 - Build: `npm run build`
+- Run for testing: `npm run dev`, then open `http://localhost:8080/`

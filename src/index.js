@@ -8,6 +8,8 @@ import main from './components/main.vue'
 // import rangy from 'rangy'
 import rangy from 'rangy/lib/rangy-serializer'
 
+const treeit = window.__treeitPlugin = {}
+
 Vue.use(ElementUI)
 
 console.log('===== Test =====')
@@ -24,16 +26,25 @@ window.onload = ()=>{
     document.body.appendChild(mainDiv.$el)
 
     rangy.init()
-    rangy.restoreSelectionFromCookie()
-    console.log('rangy', rangy)
+    
+    treeit.rangy = rangy
+
+    // try {
+    //     rangy.restoreSelectionFromCookie()
+    // }
+    // catch(e){
+    //     console.error('fail to restore the selection from cookie: ', e)
+    // }
+
     document.addEventListener("selectionchange", function() {
         const sel = rangy.getSelection()
         const html = sel.toHtml()
      
         console.log('Selection.', sel)
-        const selData = rangy.serializeSelection(rangy.getSelection())
-        rangy.saveSelectionCookie()
-        console.log('Selection changed.', html, selData)
+        const omitChecksum  = true 
+        // const selData = rangy.serializeSelection(rangy.getSelection(), omitChecksum)
+        // rangy.saveSelectionCookie()
+        //console.log('Selection changed.', html, selData)
         //mainDiv.show()
     })
 }

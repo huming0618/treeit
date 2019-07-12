@@ -3,6 +3,6 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     console.log('Turning ' + tab.url + ' red!');
     console.log('chrome', chrome);
     chrome.tabs.executeScript({
-      code: 'document.body.style.backgroundColor="red"'
+      file: "inject.js"
     });
   });
