@@ -1,17 +1,17 @@
 module.exports = [
     {
-        test: /\.scss$/,
+        test: /\.s(c|a)ss$/,
         use: [
-            "style-loader", // creates style nodes from JS strings
-            "css-loader", // translates CSS into CommonJS
-            "sass-loader" // compiles Sass to CSS, using Node Sass by default
-        ]
-    },
-    {
-        test: /\.css$/,
-        use: [
+            { loader: "vue-style-loader" },
             { loader: "style-loader" },
-            { loader: "css-loader" }
+            { loader: "css-loader" },
+            {
+                loader: 'sass-loader',
+                options: {
+                    implementation: require('sass'),
+                    fiber: require('fibers')
+                }
+            }
         ]
     },
     {

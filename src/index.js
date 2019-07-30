@@ -1,5 +1,6 @@
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+// import ElementUI from 'element-ui'
+// import 'element-ui/lib/theme-chalk/index.css'
+import Vuetify from "vuetify/lib"
 import './style/treeit.scss'
 
 import Vue from 'vue'
@@ -10,8 +11,8 @@ import rangy from 'rangy/lib/rangy-serializer'
 
 const treeit = window.__treeitPlugin = {}
 
-Vue.use(ElementUI)
-
+// Vue.use(ElementUI)
+Vue.use(Vuetify)
 console.log('===== Test =====')
 
 
